@@ -7,18 +7,25 @@ document.getElementById("submitBtn").addEventListener("click", function () {
         parseInt(document.getElementById("input4").value),
         parseInt(document.getElementById("input5").value)];
 
-    let outputArr = [];
-    let sunnyBuildings = 1;
-    let currentTallest = inputArr[0];
-    outputArr.push(currentTallest);
+    let outputArr = ["sunny"];
 
-    for (let loop = 0; loop < inputArr.length; loop++) {
-        if (inputArr[loop] > currentTallest) {
-            sunnyBuildings++;
-            outputArr += inputArr[loop];
-            currentTallest = inputArr[loop];
-            document.getElementById("building" + outputArr[loop] + "Img").style.visibility = "visible";
+    for (let loop = 1; loop < inputArr.length; loop++) {
+        let taller = false;
+
+        for (let innerLoop = 0; innerLoop < loop; innerLoop++) {
+            if (inputArr[innerLoop] >= inputArr[loop]) {
+                taller = true;
+                break;
+            } else {
+                continue;
+            }
         }
-        document.getElementById("resultSpan").innerHTML = `${sunnyBuildings} buildings have sun cover. <br /> The buildings that have sun cover are: ${outputArr.join("")}.`;
+
+        if (taller) {
+            outputArr.push("shady");
+            document.getElementById("building" + outputArr[loop] + "Img").style.visibility = "visible";
+        } else {
+            outputArr.push("sunny");
+        }
     }
 });
