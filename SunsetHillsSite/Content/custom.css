@@ -23,3 +23,7 @@
 .modal-brown {
     background-color: #2f1708;
 }
+
+.building-hide {
+    visibility: hidden;
+}

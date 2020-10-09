@@ -20,14 +20,18 @@ document.getElementById("submitBtn").addEventListener("click", function () {
                 continue;
             }
         }
-
         if (taller) {
             outputArr.push("shady");
-            //document.getElementById("building" + outputArr[loop] + "Img").style.visibility = "visible";
         } else {
             outputArr.push("sunny");
         }
 
-        document.getElementById("resultSpan").innerHTML = `${outputArr.length} buildings are touched by the sun. The buildings that can see the sun are: ${outputArr.join(", ")}`;
+        document.getElementById("resultSpan").innerHTML = `${outputArr.length} building(s) are touched by the sun. The building(s) in order that can see the sun are: ${outputArr.join(", ")}`;
     }
+
+    //for (let loop = 0; loop < outputArr.length; loop++) {
+    //    if (outputArr[loop] === "sunny") {
+    //        document.getElementById(`building ${loop} Img`).classList.remove("building-hide");
+    //    }
+    //}
 });
