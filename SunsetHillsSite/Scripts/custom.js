@@ -1,37 +1,27 @@
-// Custom JS
+//// Custom JS
 
 document.getElementById("submitBtn").addEventListener("click", function () {
-    let inputArr = [parseInt(document.getElementById("input1").value),
-        parseInt(document.getElementById("input2").value),
-        parseInt(document.getElementById("input3").value),
-        parseInt(document.getElementById("input4").value),
-        parseInt(document.getElementById("input5").value)];
+    let buildingArray = [parseInt(document.getElementById("input1").value),
+    parseInt(document.getElementById("input2").value),
+    parseInt(document.getElementById("input3").value),
+    parseInt(document.getElementById("input4").value),
+    parseInt(document.getElementById("input5").value)];
 
-    let outputArr = ["sunny"];
+    let currentTallest = buildingArray[0];
+    var count = 1;
+    let outputArr = [1]
+    for (let loop = 1; loop < buildingArray.length; loop++) {
 
-    for (let loop = 1; loop < inputArr.length; loop++) {
-        let taller = false;
+        if (buildingArray[loop] > currentTallest) {
+            // removing visibility: hidden from building images
+            //document.getElementById(`building ${count} Img`)
+            //.classList.remove("building-hide");
 
-        for (let innerLoop = 0; innerLoop < loop; innerLoop++) {
-            if (inputArr[innerLoop] >= inputArr[loop]) {
-                taller = true;
-                break;
-            } else {
-                continue;
-            }
+            count++;
+            outputArr.push(loop + 1);
+            currentTallest = buildingArray[loop];
         }
-        if (taller) {
-            outputArr.push("shady");
-        } else {
-            outputArr.push("sunny");
-        }
-
-        document.getElementById("resultSpan").innerHTML = `${outputArr.length} building(s) are touched by the sun. The building(s) in order that can see the sun are: ${outputArr.join(", ")}`;
     }
-
-    //for (let loop = 0; loop < outputArr.length; loop++) {
-    //    if (outputArr[loop] === "sunny") {
-    //        document.getElementById(`building ${loop} Img`).classList.remove("building-hide");
-    //    }
-    //}
+    document.getElementById("resultSpan").innerHTML =
+        `${count} building(s) have sun cover. Building(s) ${outputArr} can see the sunset.`;
 });
