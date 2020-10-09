@@ -23,9 +23,11 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
         if (taller) {
             outputArr.push("shady");
-            document.getElementById("building" + outputArr[loop] + "Img").style.visibility = "visible";
+            //document.getElementById("building" + outputArr[loop] + "Img").style.visibility = "visible";
         } else {
             outputArr.push("sunny");
         }
+
+        document.getElementById("resultSpan").innerHTML = `${outputArr.length} buildings are touched by the sun. The buildings that can see the sun are: ${outputArr.join(", ")}`;
     }
 });
