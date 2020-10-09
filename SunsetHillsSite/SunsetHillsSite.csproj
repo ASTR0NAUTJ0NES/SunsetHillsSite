@@ -97,6 +97,8 @@
     <Content Include="assets\vendor\php-email-form\validate.js" />
     <Content Include="changelog.txt" />
     <Content Include="Content\custom.css" />
+    <Content Include="Content\customCode.css" />
+    <Content Include="Content\prism.css" />
     <Content Include="forms\contact.php" />
     <Content Include="forms\notify.php" />
     <Content Include="forms\Readme.txt" />
@@ -111,6 +113,7 @@
     <Content Include="index.html" />
     <Content Include="Readme.txt" />
     <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\prism.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
