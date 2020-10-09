@@ -101,6 +101,12 @@
     <Content Include="forms\notify.php" />
     <Content Include="forms\Readme.txt" />
     <Content Include="Code.html" />
+    <Content Include="Images\android-chrome-512x512.png" />
+    <Content Include="Images\buildings\building1.png" />
+    <Content Include="Images\buildings\building2.png" />
+    <Content Include="Images\buildings\building3.png" />
+    <Content Include="Images\buildings\building4.png" />
+    <Content Include="Images\buildings\building5.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="index.html" />
     <Content Include="Readme.txt" />
